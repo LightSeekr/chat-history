@@ -1,5 +1,6 @@
 # chat-history
 聊天历史记录管理
+原项目是 https://github.com/wangle201210/chat-history 
 
 ## 为什么需要
 目前eino提供了快捷接入大模型的方法但是聊天历史记录的功能没有提供，导致没法进行对轮对话，及对话管理
