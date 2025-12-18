@@ -1,8 +1,8 @@
 package eino
 
 import (
+	"github.com/LightSeekr/chat-history/models"
 	"github.com/cloudwego/eino/schema"
-	"github.com/wangle201210/chat-history/models"
 )
 
 func messageList2ChatHistory(mess []*models.Message) (history []*schema.Message) {

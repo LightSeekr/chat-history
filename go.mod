@@ -1,4 +1,4 @@
-module github.com/wangle201210/chat-history
+module github.com/LightSeekr/chat-history
 
 go 1.23.1
 

@@ -1,9 +1,9 @@
 package eino
 
 import (
+	"github.com/LightSeekr/chat-history/models"
+	"github.com/LightSeekr/chat-history/repositories"
 	"github.com/cloudwego/eino/schema"
-	"github.com/wangle201210/chat-history/models"
-	"github.com/wangle201210/chat-history/repositories"
 )
 
 type History struct {
@@ -25,13 +25,19 @@ func NewEinoHistory(dsn string) *History {
 	}
 }
 
-// SaveMessage 存储message
-func (x *History) SaveMessage(mess *schema.Message, convID string) error {
-	return x.mr.Create(&models.Message{
+// SaveMessage 存储message  assistantMsgID
+func (x *History) SaveMessage(mess *schema.Message, convID, assistantMsgID string) error {
+	msg := &models.Message{
 		Role:           string(mess.Role),
 		Content:        mess.Content,
 		ConversationID: convID,
-	})
+		MsgID:          assistantMsgID,
+	}
+	err := x.mr.Create(msg)
+	if err != nil {
+		return err
+	}
+	return nil
 }
 
 // GetHistory 根据convID获取聊天历史

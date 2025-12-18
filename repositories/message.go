@@ -1,8 +1,8 @@
 package repositories
 
 import (
+	"github.com/LightSeekr/chat-history/models"
 	"github.com/google/uuid"
-	"github.com/wangle201210/chat-history/models"
 	"gorm.io/gorm"
 )
 

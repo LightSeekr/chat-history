@@ -34,7 +34,7 @@ func createMessagesFromTemplate(ctx context.Context, convID, question string) (m
 	err = eh.SaveMessage(&schema.Message{
 		Role:    schema.User,
 		Content: question,
-	}, convID)
+	}, convID, "")
 	if err != nil {
 		return
 	}

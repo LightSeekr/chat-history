@@ -5,10 +5,10 @@ import (
 	"log"
 	"os"
 
+	"github.com/LightSeekr/chat-history/eino"
 	"github.com/cloudwego/eino-ext/components/model/openai"
 	"github.com/cloudwego/eino/components/model"
 	"github.com/google/uuid"
-	"github.com/wangle201210/chat-history/eino"
 )
 
 // 初始化一个
@@ -45,7 +45,7 @@ func main() {
 		}
 		result := generate(ctx, cm, messages)
 		/* add start */
-		err = eh.SaveMessage(result, convID)
+		err = eh.SaveMessage(result, convID, "")
 		if err != nil {
 			log.Fatalf("save assistant message err: %v", err)
 			return
